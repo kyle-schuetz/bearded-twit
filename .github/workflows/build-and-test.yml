@@ -25,7 +25,7 @@ jobs:
           echo "::set-output name=mod_changes::$(scripts/check-go-mod-changes.sh)"
 
       - name: Install dependencies
-        if: steps.check-mod-changes.outputs.mod_changes == 'true'
+        if: env.changed == 'true'
         run: go mod download
 
       - name: Build
