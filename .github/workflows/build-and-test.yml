@@ -21,8 +21,8 @@ jobs:
       - name: Check if go.mod or go.sum has changed
         id: check-mod-changes
         run: |
-          chmod +x check-go-mod-changes.sh
-          echo "::set-output name=mod_changes::$(./check-go-mod-changes.sh)"
+          chmod +x scripts/check-go-mod-changes.sh
+          echo "::set-output name=mod_changes::$(scripts/check-go-mod-changes.sh)"
 
       - name: Install dependencies
         if: steps.check-mod-changes.outputs.mod_changes == 'true'
