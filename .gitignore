@@ -1,0 +1,14 @@
+# Binaries for programs and plugins
+*build*
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Temporary files created by GoLand
+.idea/
+*.iml
