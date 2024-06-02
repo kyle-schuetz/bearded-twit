@@ -26,10 +26,14 @@ jobs:
 
       - name: Install dependencies
         if: env.changed == 'true'
-        run: go mod download
+        run: go mod download || echo "No dependencies to download"
 
       - name: Build
-        run: go build -v ./...
+        run: |
+          chmod +x scripts/build.sh
+          scripts/build.sh
 
       - name: Test
-        run: go test -v ./...
+        run: |
+          chmod +x scripts/test.sh
+          scripts/test.sh
